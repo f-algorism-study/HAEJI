@@ -1,0 +1,62 @@
+class Solution {
+    public int solution(String s) {
+		int n = 0;
+		
+		String answer = "";
+        int ans = 0;
+		
+		while(true) {
+		if(n> s.length()-1) break;
+		String a = "";
+		String b = "";
+		String c = "";
+		if(n+3<=s.length()) {
+			a = s.substring(n, n+3);
+		}
+		if(n+4<=s.length()) {
+			b = s.substring(n, n+4);
+		}
+		if(n+5<=s.length()) {
+			c = s.substring(n, n+5);
+		}
+		
+        if(a.equals("one")){
+            answer += "1";
+            n+= 3;
+        }else if(a.equals("two")){
+            answer += "2";
+            n += 3;
+        }else if(a.equals("six")){
+            answer += "6";
+            n += 3;
+        }else if(b.equals("zero")){
+            answer += "0";
+            n += 4;
+        }else if(b.equals("four")){
+            answer += "4";
+            n += 4;
+        }else if(b.equals("five")){
+            answer += "5";
+            n += 4;
+        }else if(b.equals("nine")){
+            answer += "9";
+            n += 4;
+        }else if(c.equals("three")){
+            answer += "3";
+            n += 5;
+        }else if(c.equals("seven")){
+            answer += "7";
+            n += 5;
+        }else if(c.equals("eight")){
+            answer += "8";
+            n += 5;
+        }else{
+            answer += s.charAt(n);
+            n += 1;
+        }
+        }
+            
+        ans = Integer.parseInt(answer);
+        return ans;
+    }
+}
